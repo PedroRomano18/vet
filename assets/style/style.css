@@ -1,0 +1,410 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #c6e6fa, #e4f7ff, #ffffff);
+    animation: bgAnimation 10s ease infinite;
+}
+
+.top-bar {
+    background-color: #00111e;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo-bar {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: flex-end;
+}
+
+header {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    background-color: #00111e;
+    width: 100%;
+    height: 400px;
+}
+
+.slide {
+    width: 100%;
+    background-color: #00111e;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 60vh;
+    padding: 20px;
+}
+
+.text-section {
+    flex: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.image-section img {
+    width: 400px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.image-section.show img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title-e {
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "card1 card2 card3 card4"
+        "card5 card6 card7 card8";
+    gap: 2rem;
+    margin: 5rem 0;
+    padding: 0 2rem;
+}
+
+.card {
+    position: relative;
+    border-radius: 8px;
+    background-color: #033a64;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+.card:hover .card-img {
+    opacity: 0.4;
+}
+
+.card h3 {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: #666;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+}
+
+.card5 {
+    grid-area: card5;
+}
+
+.card6 {
+    grid-area: card6;
+}
+
+.card7 {
+    grid-area: card7;
+}
+
+.card8 {
+    grid-area: card8;
+}
+
+.dicas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5f9fcd; /* Fallback se a imagem falhar */
+    border-radius: 12px;
+    padding: 60px;
+    gap: 50px;
+    flex-wrap: wrap;
+    min-height: 300px;
+}
+
+.image-dica {
+    flex: 1;
+    min-width: 300px;
+    background-image: url('../image/tartarectomia.png'); /* ajuste conforme sua pasta */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    height: 300px; /* ajuste de altura para manter proporção */
+    opacity: 0.8; /* imagem meio transparente */
+    transition: transform 0.3s ease;
+    
+}
+
+.fade-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.image-dica:hover {
+    transform: scale(1.02); /* leve zoom ao passar o mouse */
+}
+
+.texto-dica {
+    flex: 1;
+    max-width: 600px;
+    color: rgb(238, 237, 235);
+}
+
+.texto-dica h2 {
+    font-size: 28px;
+    margin-bottom: 28px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.texto-dica h2:hover {
+    color: #095781; /* cor ao passar o mouse */
+}
+
+.texto-dica p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c1daec;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 60px auto;
+    max-width: 800px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.contato h2 {
+    color: #033457;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contato p {
+    color: #333;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.contato .btn {
+    margin-top: 20px;
+    background-color: #0077cc;
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contato .btn:hover {
+    background-color: #005f99;
+    transform: scale(1.05);
+}
+
+h1 {
+    color: #005f99;
+    font-size: 32px;
+}
+
+h2 {
+    color: #005f99;
+}
+
+h3 {
+    color: #f4faff;
+}
+
+p {
+    color: #072b49;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 5px 0;
+}
+
+.btn {
+    background-color: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #00111e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    color: #ffffff;
+}
+
+footer .logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .top-bar{
+        justify-content: center;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .whatsapp-icon {
+        display: none;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    header img {
+        width: 120px;
+        margin-bottom: 0.5rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .hero-section img {
+        width: 100%;
+        height: auto;
+    }
+
+    .dica-container {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .text-content {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    footer h3 {
+        margin-bottom: 0.8rem;
+    }
+}
