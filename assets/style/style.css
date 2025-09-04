@@ -37,6 +37,11 @@ header {
     height: 400px;
 }
 
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
 .slide {
     width: 100%;
     background-color: #00111e;
@@ -102,7 +107,7 @@ main {
 
 .card {
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: #033a64;
     padding: 2rem;
     text-align: center;
@@ -178,6 +183,14 @@ main {
 
 .card8 {
     grid-area: card8;
+}
+
+*, *::before, *::after { 
+    box-sizing: border-box; 
+}
+
+.cards-carousel {
+    display: none;
 }
 
 .dicas {
@@ -336,6 +349,29 @@ footer .logo {
 }
 
 @media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+
+    .text-section {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .image-section img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    .carousel {
+        overflow: visible;
+        height: auto;
+    }
+
     .top-bar{
         justify-content: center;
     }
@@ -362,6 +398,30 @@ footer .logo {
 
     .social-icons {
         justify-content: center;
+    }
+
+    .cards {
+        display: none;
+    }
+
+    .cards-carousel {
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        margin: 2rem 0;
+    }
+
+    .cards-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    }
+
+    .cards-carousel .card {
+    flex: 0 0 100%;
+    margin: 0;
+    min-height: 180px;
+    flex-shrink: 0;
     }
 
     nav {
